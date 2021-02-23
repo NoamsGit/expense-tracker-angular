@@ -1,0 +1,43 @@
+
+<form  #expenseForm="ngForm"  class="example-form" style="margin-left: 40px; margin-right: 40px; text-align: center; margin-top: 20px;" >
+    <div class="tst">
+        <mat-form-field class="example-full-width" appearance="outline" style="text-align: right" (input)="sum = $event.target.value">
+            <mat-label>סכום</mat-label>
+            <input  type="number" matInput  >
+          </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field class="example-full-width" appearance="outline" style="text-align: right"  (input)="category = $event.target.value" >
+            <mat-label>קטגוריה</mat-label>
+            <input matInput  >
+          </mat-form-field>
+    </div>
+
+    <!-- flex-direction: column-reverse;  -->
+    <mat-radio-group aria-label="Select an option" style=" margin-left: 5px;" (input)="method = $event.target.value">
+      <mat-radio-button value="מזומן"  style="width: 20px; margin-top: 20px;">
+        <p class="radio-button-label" style="position: relative; top: -20px; right: 40px;">
+          מזומן
+        </p>
+       </mat-radio-button>
+      <mat-radio-button value="דיירקט" style=" width: 20px; margin-left: 40px; margin-right: 40px;" >
+        <p class="radio-button-label" style=" position: relative; top: -20px; right: 40px;">
+          דיירקט
+        </p>
+      </mat-radio-button>
+      <mat-radio-button value="אשראי" style="width: 20px">
+        <p class="radio-button-label" style="position: relative; top: -20px; right: 40px;">
+          אשראי
+        </p>
+      </mat-radio-button>
+    </mat-radio-group>
+    
+  
+  </form>
+ 
+
+  <div style="text-align: center; margin-top: 30px;">
+    <button (click)=" onClick2()"  mat-raised-button color="primary" >שלח</button>
+  </div>
+  <!-- <app-scroll-list></app-scroll-list> -->
+  <!-- (click)="onClick($event)" -->
