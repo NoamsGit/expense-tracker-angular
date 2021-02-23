@@ -1,0 +1,27 @@
+.scroll-list-item {
+  width: 100%;
+  height: 45px;
+  border: solid 1px gray;
+  background-color: green;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info-data-category {
+  display: flex;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+}
+
+.current-data {
+  margin-left: 200px;
+}
+.info-data {
+  margin-left: 10px;
+}
+.color-bar {
+  height: 100%;
+  width: 15px;
+  background-color: hotpink;
+}
