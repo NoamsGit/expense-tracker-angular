@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { ScrollListComponent } from './scroll-list/scroll-list.component';
 import { ScrollListItemComponent } from './scroll-list-item/scroll-list-item.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,8 @@ import { ScrollListItemComponent } from './scroll-list-item/scroll-list-item.com
     MatButtonModule,
     MatRadioModule,
     FormsModule,
-    ScrollingModule
+    ScrollingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
