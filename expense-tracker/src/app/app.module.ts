@@ -10,11 +10,17 @@ import {MatButtonModule} from '@angular/material/button';
 
 import {MatRadioModule} from '@angular/material/radio';
 import { FormsModule } from '@angular/forms';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import { ScrollListComponent } from './scroll-list/scroll-list.component';
+import { ScrollListItemComponent } from './scroll-list-item/scroll-list-item.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainViewComponent
+    MainViewComponent,
+    ScrollListComponent,
+    ScrollListItemComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatButtonModule,
     MatRadioModule,
-    FormsModule
+    FormsModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
