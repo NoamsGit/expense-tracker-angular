@@ -8,8 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ScrollListItemComponent implements OnInit {
 
   @Input() category:string = 'קטגוריה'
-  @Input() initialBudget:string = 'תקציב התחלתי'
-  @Input() currentSum:string = 'סכום נוכחי'
+  @Input() initialBudget:number = 99
+  @Input() currentSum:number = 55
 
 
   constructor() { }
