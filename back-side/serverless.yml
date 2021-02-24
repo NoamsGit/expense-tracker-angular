@@ -1,0 +1,43 @@
+service: back-side
+
+frameworkVersion: "2"
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux
+
+provider:
+  name: aws
+  runtime: python3.8
+  lambdaHashingVersion: 20201221
+  region: eu-west-1
+  environment:
+    MONGODB_URI: mongodb+srv://node-rest-shop:${file(./secret.json):mongo_password}@node-rest-shop.qy06n.mongodb.net/expense-tracker?retryWrites=true&w=majority
+
+functions:
+  expense-create:
+    handler: handler.create
+    events:
+      - http:
+          path: expenses
+          method: post
+          cors: true
+#    Define function environment variables here
+#    environment:
+#      variable2: value2
+
+# you can add CloudFormation resource templates here
+#resources:
+#  Resources:
+#    NewResource:
+#      Type: AWS::S3::Bucket
+#      Properties:
+#        BucketName: my-new-bucket
+#  Outputs:
+#     NewOutput:
+#       Description: "Description for the output"
+#       Value: "Some output value"
+

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-main-view',
@@ -9,34 +10,33 @@ export class MainViewComponent implements OnInit {
   category = 'כללי';
   sum = 0
   method = ''
-  onClick(event){console.log(event);}
 
-  onClick2(){
+  onClick(){
     console.log('12344567789');
 
     console.log(this.category, this.sum, this.method);
     console.log(new Date());
-    // this.onPostExpense();
+    this.createExpense();
   }
 
-  // onPostExpense(){
-  //   // const headers = { 'Access-Control-Allow-Origin': '*'}; 
-  //   const headers = { 'Content-Type': 'application/json'};
+  createExpense(){
+    // const headers = { 'Access-Control-Allow-Origin': '*'}; 
+    const headers = { 'Content-Type': 'application/json'};
 
-  //   const expense = {
-  //     category : this.category,
-  //      sum: this.sum,
-  //      method: this.method,
-  //      date : new Date()
-  //     }
+    const expense = {
+      category : this.category,
+       sum: this.sum,
+       method: this.method,
+       date : new Date()
+      }
    
-  //   this.http.post('https://hqkmfv6or2.execute-api.eu-west-1.amazonaws.com/dev/expenses', expense, {headers})
-  //   .subscribe(responseData => {
-  //     console.log(responseData);
-  //   })
-  // }
+    this.http.post('https://hqkmfv6or2.execute-api.eu-west-1.amazonaws.com/dev/expenses', expense, {headers})
+    .subscribe(responseData => {
+      console.log(responseData);
+    })
+  }
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
