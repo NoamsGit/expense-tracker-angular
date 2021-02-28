@@ -3,3 +3,18 @@
   justify-content: center;
   padding-top: 40px;
 }
+
+::ng-deep .snackbar-success {
+  background-color: #d4edda;
+  border: 2px solid #c3e6cb;
+  color: #155724;
+}
+::ng-deep .snackbar-success .mat-simple-snackbar-action {
+  color: #eb3017;
+}
+
+::ng-deep .snackbar-failure {
+  background-color: #f8d7da;
+  border: 2px solid #f5c6cb;
+  color: #721c24;
+}

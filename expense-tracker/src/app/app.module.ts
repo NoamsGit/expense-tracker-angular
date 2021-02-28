@@ -14,6 +14,7 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
 import { ScrollListComponent } from './scroll-list/scroll-list.component';
 import { ScrollListItemComponent } from './scroll-list-item/scroll-list-item.component';
 import { HttpClientModule } from '@angular/common/http';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatRadioModule,
     FormsModule,
     ScrollingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

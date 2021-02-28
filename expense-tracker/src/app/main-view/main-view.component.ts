@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-main-view',
@@ -8,14 +10,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MainViewComponent implements OnInit {
   category = 'כללי';
-  sum = 0
-  method = ''
+  sum = 0;
+  method = '';
+  successMessage = 'הפעולה התבצעה בהצלחה!';
+  successAction = 'בטל פעולה'; failure
+  failureMessage = 'הפעולה נכשלה!';
+  
 
   onClick(){
-    console.log('12344567789');
-
-    console.log(this.category, this.sum, this.method);
-    console.log(new Date());
     this.createExpense();
   }
 
@@ -33,10 +35,35 @@ export class MainViewComponent implements OnInit {
     this.http.post('https://hqkmfv6or2.execute-api.eu-west-1.amazonaws.com/dev/expenses', expense, {headers})
     .subscribe(responseData => {
       console.log(responseData);
-    })
+      responseData['insert_success']? this.openSnackBarSuccess(): this.openSnackBarFailure();
+      ;
+    },
+    arr => {this.openSnackBarFailure();})
   }
 
-  constructor(private http: HttpClient) { }
+  openSnackBar() {
+    this._snackBar.open('hello');
+  }
+
+  openSnackBarSuccess() {
+    this._snackBar.open(this.successMessage, this.successAction, {
+      duration: 3000,
+      direction:'rtl',
+      verticalPosition: 'top',
+      panelClass: ['snackbar-success']
+    });
+}
+
+openSnackBarFailure() {
+  this._snackBar.open(this.failureMessage, null, {
+    duration: 2000,
+    direction:'rtl',
+    verticalPosition: 'top',
+    panelClass: ['snackbar-failure']
+  });
+}
+
+  constructor(private http: HttpClient, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
