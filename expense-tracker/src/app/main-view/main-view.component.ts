@@ -68,4 +68,15 @@ openSnackBarFailure() {
   ngOnInit(): void {
   }
 
+  // preInsert
+  // postInsert
+  // update DB
+  // update view
+
+
+
+  // insertOne();
+  // updateCurrentState();
+  // updateView();
+
 }
