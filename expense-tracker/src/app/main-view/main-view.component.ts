@@ -9,16 +9,19 @@ import {MatSnackBar} from '@angular/material/snack-bar';
   styleUrls: ['./main-view.component.css']
 })
 export class MainViewComponent implements OnInit {
+  categorys = ['ברירת מחדל']
   category = 'כללי';
   sum = 0;
   method = '';
   successMessage = 'הפעולה התבצעה בהצלחה!';
-  successAction = 'בטל פעולה'; failure
+  successAction = 'בטל פעולה'; 
   failureMessage = 'הפעולה נכשלה!';
-  
+  selectedCategory = "";
+
 
   onClick(){
-    this.createExpense();
+    // this.createExpense();
+    console.log(this.category);
   }
 
   createExpense(){
@@ -35,10 +38,27 @@ export class MainViewComponent implements OnInit {
     this.http.post('https://hqkmfv6or2.execute-api.eu-west-1.amazonaws.com/dev/expenses', expense, {headers})
     .subscribe(responseData => {
       console.log(responseData);
-      responseData['insert_success']? this.openSnackBarSuccess(): this.openSnackBarFailure();
+      responseData['success']? this.openSnackBarSuccess(): this.openSnackBarFailure();
       ;
     },
     arr => {this.openSnackBarFailure();})
+  }
+
+
+  loadCategorys(){
+    const headers = { 'Content-Type': 'application/json'};
+    this.http.get<any>('https://vvhi33w30k.execute-api.eu-west-1.amazonaws.com/dev/categorys', {headers})
+    .subscribe(responseData => {
+      if(responseData['success']){
+        this.categorys = responseData['categorys'];
+        console.log("loadCategories Success!!!");
+        console.log(responseData);
+  
+      }else{
+        this.openSnackBarFailureOnLoad();
+      }
+    },
+    arr => {this.openSnackBarFailureOnLoad();})
   }
 
   openSnackBar() {
@@ -62,11 +82,22 @@ openSnackBarFailure() {
     panelClass: ['snackbar-failure']
   });
 }
+openSnackBarFailureOnLoad() {
+  this._snackBar.open('FailureOnLoad', null, {
+    duration: 2000,
+    direction:'rtl',
+    verticalPosition: 'top',
+    panelClass: ['snackbar-failure']
+  });
+}
 
   constructor(private http: HttpClient, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+    this.loadCategorys();
   }
+
+
 
   // preInsert
   // postInsert
@@ -79,4 +110,8 @@ openSnackBarFailure() {
   // updateCurrentState();
   // updateView();
 
+
+  // onPageLoad:
+  //   cats = getCategory();  
+  //   mat-select => from cats;
 }

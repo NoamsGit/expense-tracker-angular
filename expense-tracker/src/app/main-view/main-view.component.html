@@ -7,10 +7,15 @@
           </mat-form-field>
     </div>
     <div>
-        <mat-form-field class="example-full-width" appearance="outline" style="text-align: right"  (input)="category = $event.target.value" >
-            <mat-label>קטגוריה</mat-label>
-            <input matInput  >
-          </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline" style="text-align: right">
+        <mat-label>קטגוריה</mat-label>
+        <mat-select [(ngModel)]="selectedCategory" name="food">
+          <mat-option *ngFor="let category of categorys" [value]="category" style="text-align: right">
+            {{category}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+       
     </div>
 
     <!-- flex-direction: column-reverse;  -->
