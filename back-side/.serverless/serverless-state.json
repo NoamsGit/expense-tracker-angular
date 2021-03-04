@@ -184,7 +184,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/back-side/dev/1614792876676-2021-03-03T17:34:36.676Z/back-side.zip"
+                "S3Key": "serverless/back-side/dev/1614877897776-2021-03-04T17:11:37.776Z/back-side.zip"
               },
               "Handler": "create.create",
               "Runtime": "python3.8",
@@ -214,7 +214,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/back-side/dev/1614792876676-2021-03-03T17:34:36.676Z/back-side.zip"
+                "S3Key": "serverless/back-side/dev/1614877897776-2021-03-04T17:11:37.776Z/back-side.zip"
               },
               "Handler": "list.list",
               "Runtime": "python3.8",
@@ -237,24 +237,24 @@
               "CategoryDashlistLogGroup"
             ]
           },
-          "ExpenseDashcreateLambdaVersion6uD7Zmi4b1XmLbrQV6fVM2zEp9GWfDuhbCdAkpYJSi4": {
+          "ExpenseDashcreateLambdaVersion7SkHdrxtK4sxaLvz6dt9V2B6ukbKUGlcmhhUSgPj9BA": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ExpenseDashcreateLambdaFunction"
               },
-              "CodeSha256": "B4JZqROTDlESH+s6ngTVRH/7bMP/FpyfGRbsgGr60rc="
+              "CodeSha256": "iuO1xTY1CQUXxg4SGBoirG920JS7hwQG+GoA26JcuaY="
             }
           },
-          "CategoryDashlistLambdaVersionespMrswIwei5GsOosGwJM0n4oG9amMYuBoviYR6QB60": {
+          "CategoryDashlistLambdaVersionSi7LMCIhkF7dnSrQXyL8mbRXX2yeiaMXkRUDhgn4": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CategoryDashlistLambdaFunction"
               },
-              "CodeSha256": "B4JZqROTDlESH+s6ngTVRH/7bMP/FpyfGRbsgGr60rc="
+              "CodeSha256": "iuO1xTY1CQUXxg4SGBoirG920JS7hwQG+GoA26JcuaY="
             }
           },
           "ApiGatewayRestApi": {
@@ -475,7 +475,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1614792869074": {
+          "ApiGatewayDeployment1614877878348": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -574,13 +574,13 @@
           "ExpenseDashcreateLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ExpenseDashcreateLambdaVersion6uD7Zmi4b1XmLbrQV6fVM2zEp9GWfDuhbCdAkpYJSi4"
+              "Ref": "ExpenseDashcreateLambdaVersion7SkHdrxtK4sxaLvz6dt9V2B6ukbKUGlcmhhUSgPj9BA"
             }
           },
           "CategoryDashlistLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CategoryDashlistLambdaVersionespMrswIwei5GsOosGwJM0n4oG9amMYuBoviYR6QB60"
+              "Ref": "CategoryDashlistLambdaVersionSi7LMCIhkF7dnSrQXyL8mbRXX2yeiaMXkRUDhgn4"
             }
           },
           "ServiceEndpoint": {
@@ -738,7 +738,7 @@
         "timeout": 6,
         "runtime": "python3.8",
         "vpc": {},
-        "versionLogicalId": "ExpenseDashcreateLambdaVersion6uD7Zmi4b1XmLbrQV6fVM2zEp9GWfDuhbCdAkpYJSi4"
+        "versionLogicalId": "ExpenseDashcreateLambdaVersion7SkHdrxtK4sxaLvz6dt9V2B6ukbKUGlcmhhUSgPj9BA"
       },
       "category-list": {
         "handler": "list.list",
@@ -776,7 +776,7 @@
         "timeout": 6,
         "runtime": "python3.8",
         "vpc": {},
-        "versionLogicalId": "CategoryDashlistLambdaVersionespMrswIwei5GsOosGwJM0n4oG9amMYuBoviYR6QB60"
+        "versionLogicalId": "CategoryDashlistLambdaVersionSi7LMCIhkF7dnSrQXyL8mbRXX2yeiaMXkRUDhgn4"
       }
     },
     "configValidationMode": "warn",
@@ -804,7 +804,7 @@
     "artifact": "C:\\Users\\owner\\Desktop\\projects\\expense-tracker-angular\\back-side\\.serverless\\back-side.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/back-side/dev/1614792876676-2021-03-03T17:34:36.676Z",
+    "artifactDirectoryName": "serverless/back-side/dev/1614877897776-2021-03-04T17:11:37.776Z",
     "artifact": "back-side.zip"
   }
 }

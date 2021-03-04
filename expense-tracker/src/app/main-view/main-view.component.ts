@@ -10,32 +10,33 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class MainViewComponent implements OnInit {
   categorys = ['ברירת מחדל']
-  category = 'כללי';
   sum = 0;
   method = '';
+  selectedCategory = "";
+
   successMessage = 'הפעולה התבצעה בהצלחה!';
   successAction = 'בטל פעולה'; 
   failureMessage = 'הפעולה נכשלה!';
-  selectedCategory = "";
+  
+  setMethod(value){
+    this.method = value;
+  }
 
-
-  onClick(){
-    // this.createExpense();
-    console.log(this.category);
+  onSubmit(){
+    this.createExpense();
+    console.log(this.method, this.selectedCategory, this.sum);
   }
 
   createExpense(){
-    // const headers = { 'Access-Control-Allow-Origin': '*'}; 
     const headers = { 'Content-Type': 'application/json'};
-
     const expense = {
-      category : this.category,
+      category : this.selectedCategory,
        sum: this.sum,
        method: this.method,
        date : new Date()
       }
-   
-    this.http.post('https://hqkmfv6or2.execute-api.eu-west-1.amazonaws.com/dev/expenses', expense, {headers})
+ 
+    this.http.post('https://vvhi33w30k.execute-api.eu-west-1.amazonaws.com/dev/expenses', expense, {headers})
     .subscribe(responseData => {
       console.log(responseData);
       responseData['success']? this.openSnackBarSuccess(): this.openSnackBarFailure();
@@ -43,7 +44,6 @@ export class MainViewComponent implements OnInit {
     },
     arr => {this.openSnackBarFailure();})
   }
-
 
   loadCategorys(){
     const headers = { 'Content-Type': 'application/json'};
