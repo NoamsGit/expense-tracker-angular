@@ -15,13 +15,19 @@ import { ScrollListComponent } from './scroll-list/scroll-list.component';
 import { ScrollListItemComponent } from './scroll-list-item/scroll-list-item.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatSelectModule} from '@angular/material/select';
+import { FormWrapperComponent } from './form-wrapper/form-wrapper.component';
+import { SelectOptionsComponent } from './select-options/select-options.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MainViewComponent,
     ScrollListComponent,
-    ScrollListItemComponent
+    ScrollListItemComponent,
+    FormWrapperComponent,
+    SelectOptionsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +39,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     FormsModule,
     ScrollingModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

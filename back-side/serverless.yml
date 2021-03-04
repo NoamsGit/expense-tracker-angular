@@ -19,11 +19,18 @@ provider:
 
 functions:
   expense-create:
-    handler: handler.create
+    handler: create.create
     events:
       - http:
           path: expenses
           method: post
+          cors: true
+  category-list:
+    handler: list.list
+    events:
+      - http:
+          path: categorys
+          method: get
           cors: true
 #    Define function environment variables here
 #    environment:
