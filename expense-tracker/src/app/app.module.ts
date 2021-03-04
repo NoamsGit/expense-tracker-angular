@@ -16,6 +16,8 @@ import { ScrollListItemComponent } from './scroll-list-item/scroll-list-item.com
 import { HttpClientModule } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatSelectModule} from '@angular/material/select';
+import { FormWrapperComponent } from './form-wrapper/form-wrapper.component';
+import { SelectOptionsComponent } from './select-options/select-options.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import {MatSelectModule} from '@angular/material/select';
     AppComponent,
     MainViewComponent,
     ScrollListComponent,
-    ScrollListItemComponent
+    ScrollListItemComponent,
+    FormWrapperComponent,
+    SelectOptionsComponent
   ],
   imports: [
     BrowserModule,
